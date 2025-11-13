@@ -1,71 +1,444 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Asociación Colibrí – Síndrome de Down Salta</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'colibri-red': '#D42921',
-            'colibri-green': '#85C224',
-            'colibri-bg': '#EFECE9',
-            'colibri-soft-yellow': '#FDF7E7'
-          },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociación Colibrí – Síndrome de Down Salta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for smooth scrolling and clean font */
+        html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+        .btn-colibri {
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
         }
-      }
-    };
-  </script>
-
-  <style>
-    html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
-    .btn-colibri { transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(0,0,0,.06); }
-    .btn-colibri:hover { transform: translateY(-2px); box-shadow: 0 10px 15px rgba(0,0,0,.1); }
-  </style>
+        .btn-colibri:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        // Tailwind configuration with custom colors (Red/Accent, Green/Secondary, Off-White/BG)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'colibri-red': '#D42921',
+                        'colibri-green': '#85C224',
+                        'colibri-bg': '#EFECF0',
+                        'colibri-soft-yellow': '#FDF7E7', /* Added a soft yellow for warmth */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-
 <body class="bg-white text-gray-800 antialiased">
-  <!-- Navbar -->
-  <header class="sticky top-0 bg-white/95 backdrop-blur-sm shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#inicio" class="text-2xl font-bold text-colibri-red">Colibrí</a>
-      <nav class="hidden md:flex gap-6">
-        <a href="#quienes" class="hover:text-colibri-red">Quiénes Somos</a>
-        <a href="#programas" class="hover:text-colibri-red">Programas</a>
-        <a href="#colaborar" class="hover:text-colibri-red">Colaborar</a>
-        <a href="#contacto" class="hover:text-colibri-red">Contacto</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section id="inicio" class="bg-colibri-bg">
-    <div class="max-w-5xl mx-auto px-4 py-16 text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold">
-        Inclusión, <span class="text-colibri-green">Educación</span> y Comunidad.
-      </h1>
-      <p class="mt-6 text-lg text-gray-600">
-        Mejoramos la calidad de vida de las personas con síndrome de Down promoviendo su inclusión y participación activa.
-      </p>
-      <div class="mt-8 flex justify-center gap-4">
-        <a href="#quienes" class="btn-colibri inline-block px-6 py-3 rounded-lg bg-colibri-red text-white">Conocé más</a>
-        <a href="#donar" class="btn-colibri inline-block px-6 py-3 rounded-lg bg-colibri-green text-white">Doná</a>
-      </div>
-    </div>
-  </section>
+    <!-- Navbar Fija -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#inicio" class="text-2xl font-bold text-colibri-red flex items-center">
+                    🕊️ Colibrí
+                </a>
+                
+                <!-- Menu de Navegación -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+                    <a href="#inicio" class="text-gray-600 hover:text-colibri-red transition duration-150">Inicio</a>
+                    <a href="#quienes-somos" class="text-gray-600 hover:text-colibri-red transition duration-150">Quiénes Somos</a>
+                    <a href="#programas" class="text-gray-600 hover:text-colibri-red transition duration-150">Programas</a>
+                    <a href="#colaborar" class="text-gray-600 hover:text-colibri-red transition duration-150">Colaborar</a>
+                    <a href="#noticias" class="text-gray-600 hover:text-colibri-red transition duration-150">Noticias</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-colibri-red transition duration-150">Contacto</a>
+                </nav>
 
-  <!-- Footer -->
-  <footer class="mt-16 border-t">
-    <div class="max-w-5xl mx-auto px-4 py-8 text-sm text-gray-500">
-      © Asociación Colibrí 2025 — Todos los derechos reservados.
-    </div>
-  </footer>
+                <!-- CTA Donación (Visible en Desktop) -->
+                <a href="#donaciones" class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-colibri-red hover:bg-colibri-green transition duration-300 btn-colibri">
+                    💛 Doná
+                </a>
+
+                <!-- Mobile Menu Button (Opcional, se omite por simplicidad en un solo archivo) -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Página de Inicio (Inicio) -->
+        <section id="inicio" class="pt-20 pb-16 bg-colibri-soft-yellow">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Bienvenida y Presentación -->
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                        <span class="text-colibri-red">Inclusión</span>, <span class="text-colibri-green">Educación</span> y Comunidad.
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                        "Bienvenidos a Colibrí, la Asociación Salteña Síndrome de Down. Somos una organización sin fines de lucro, nacida en 1995 de la necesidad de un grupo de madres y padres de acompañarse y compartir experiencias frente al diagnóstico de trisomía 21 de sus hijos e hijas.”
+                    </p>
+
+                    <!-- Misión Destacada -->
+                    <p class="text-2xl font-semibold text-colibri-red mb-10">
+                        “Nos dedicamos a mejorar la calidad de vida de las personas con síndrome de Down, promoviendo su total inclusión y participación activa en la sociedad.”
+                    </p>
+
+                    <!-- Botones CTA -->
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="#quienes-somos" class="btn-colibri bg-white text-colibri-red border-2 border-colibri-red hover:bg-colibri-red hover:text-white px-8 py-3 rounded-full font-bold text-lg">
+                            👉 Conocé más
+                        </a>
+                        <a href="#colaborar" class="btn-colibri bg-colibri-green text-white hover:bg-colibri-red px-8 py-3 rounded-full font-bold text-lg">
+                            🤝 Sumate
+                        </a>
+                        <a href="#donaciones" class="btn-colibri bg-colibri-red text-white hover:bg-colibri-green px-8 py-3 rounded-full font-bold text-lg">
+                            💛 Doná
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Placeholder de Imagen/Video -->
+                <div class="mt-12 bg-colibri-bg p-6 rounded-3xl shadow-xl">
+                    <p class="text-gray-500 italic">
+                        
+                    </p>
+                    <img src="https://placehold.co/1200x500/85C224/FFFFFF?text=Comunidad+Colibr%C3%AD+en+acci%C3%B3n" alt="Comunidad Colibrí en acción" class="w-full h-auto rounded-2xl object-cover mt-4 shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Quiénes Somos -->
+        <section id="quienes-somos" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-colibri-red text-center mb-12 border-b-2 border-colibri-green inline-block pb-1">
+                    Quiénes Somos
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Misión, Visión, Valores Texto -->
+                    <div>
+                        <div class="space-y-6 mb-8">
+                            <div class="p-6 rounded-xl bg-colibri-bg shadow-lg">
+                                <h3 class="text-2xl font-bold text-colibri-green mb-2">Misión</h3>
+                                <p class="text-gray-700">Facilitar herramientas para mejorar la calidad de vida de las personas con síndrome de Down, promoviendo su autodeterminación, desarrollo personal y dignidad.</p>
+                            </div>
+                            <div class="p-6 rounded-xl bg-colibri-bg shadow-lg">
+                                <h3 class="text-2xl font-bold text-colibri-green mb-2">Visión</h3>
+                                <p class="text-gray-700">Construir una sociedad inclusiva para todos y todas, donde las personas con trisomía 21 puedan participar como ciudadanos plenos y con los mismos derechos.</p>
+                            </div>
+                        </div>
+
+                        <!-- Valores -->
+                        <div class="mt-8">
+                            <h3 class="text-2xl font-bold text-colibri-red mb-4">Nuestros Valores</h3>
+                            <ul class="grid grid-cols-2 gap-4 text-gray-700 font-medium">
+                                <li class="flex items-center"><span class="text-colibri-green mr-2 text-xl">✨</span> Derechos Humanos</li>
+                                <li class="flex items-center"><span class="text-colibri-green mr-2 text-xl">🤝</span> Compromiso</li>
+                                <li class="flex items-center"><span class="text-colibri-green mr-2 text-xl">🌟</span> Protagonismo</li>
+                                <li class="flex items-center"><span class="text-colibri-green mr-2 text-xl">✅</span> Honestidad</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder de Fotos -->
+                    <div class="bg-colibri-bg p-6 rounded-3xl shadow-xl">
+                        <p class="text-gray-500 italic mb-4">
+                            
+                        </p>
+                        <img src="https://placehold.co/600x400/D42921/FFFFFF?text=Equipo+Colibr%C3%AD+y+Voluntarios" alt="Equipo y Voluntarios" class="w-full h-auto rounded-2xl object-cover shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Áreas de trabajo (Programas) -->
+        <section id="programas" class="py-16 bg-colibri-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-colibri-red text-center mb-12 border-b-2 border-colibri-green inline-block pb-1">
+                    Áreas de Trabajo
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Tarjeta 1: Apoyo a las familias -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-colibri-red transition duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl text-colibri-red mr-3">👨‍👩‍👧‍👦</span>
+                            <h3 class="text-xl font-bold text-gray-800">Apoyo a las familias</h3>
+                        </div>
+                        <p class="text-gray-600">Información y contención esencial para nuevos padres, hermanos y abuelos. Construimos juntos una red de acompañamiento.</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Comité de identificación -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-colibri-red transition duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl text-colibri-red mr-3">🥳</span>
+                            <h3 class="text-xl font-bold text-gray-800">Comité de identificación</h3>
+                        </div>
+                        <p class="text-gray-600">Talleres, celebraciones, paseos y campamentos que fortalecen los lazos de amistad, identidad y pertenencia de nuestra comunidad.</p>
+                    </div>
+                    
+                    <!-- Tarjeta 3: Educación inclusiva -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-colibri-red transition duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl text-colibri-red mr-3">📚</span>
+                            <h3 class="text-xl font-bold text-gray-800">Educación inclusiva</h3>
+                        </div>
+                        <p class="text-gray-600">Proyecto “Educación para todos y todas”, con acompañamiento desde el nivel maternal hasta la formación profesional.</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Empleo con apoyo -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-colibri-red transition duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl text-colibri-green mr-3">💼</span>
+                            <h3 class="text-xl font-bold text-gray-800">Empleo con apoyo</h3>
+                        </div>
+                        <p class="text-gray-600">Preparación y coordinación con el Programa de Empleo con Apoyo de la Provincia para una inserción laboral exitosa.</p>
+                    </div>
+
+                    <!-- Tarjeta 5: Capacitación y biblioteca -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-colibri-red transition duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl text-colibri-green mr-3">🧠</span>
+                            <h3 class="text-xl font-bold text-gray-800">Capacitación y biblioteca</h3>
+                        </div>
+                        <p class="text-gray-600">Cursos, jornadas y bibliografía especializada sobre trisomía 21 para profesionales, familias y la comunidad en general.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Cómo colaborar (Sumate) -->
+        <section id="colaborar" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-colibri-green text-center mb-4 border-b-2 border-colibri-red inline-block pb-1">
+                    Cómo Colaborar
+                </h2>
+                <p class="text-center text-xl text-gray-600 mb-10">
+                    Tu apoyo es vital para que podamos seguir adelante con nuestra misión.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Columna 1: Para Empresas -->
+                    <div class="p-6 rounded-xl bg-colibri-bg shadow-xl flex flex-col items-center text-center">
+                        <span class="text-6xl mb-4">🏢</span>
+                        <h3 class="text-2xl font-bold text-colibri-red mb-3">Para Empresas</h3>
+                        <p class="text-gray-700 mb-4">Promueve la inclusión laboral y el desarrollo de programas de responsabilidad social. Compartimos experiencias exitosas desde 2011.</p>
+                        <a href="#contacto" class="btn-colibri mt-auto w-full bg-colibri-red text-white hover:bg-colibri-green py-2 rounded-full font-semibold">
+                            Contáctanos
+                        </a>
+                    </div>
+
+                    <!-- Columna 2: Hazte Socio/Voluntario -->
+                    <div class="p-6 rounded-xl bg-colibri-bg shadow-xl flex flex-col items-center text-center">
+                        <span class="text-6xl mb-4">👥</span>
+                        <h3 class="text-2xl font-bold text-colibri-red mb-3">Sé Parte de la Comunidad</h3>
+                        <ul class="text-left text-gray-700 space-y-3 mb-6 w-full">
+                            <li class="flex items-start">
+                                <span class="text-colibri-green mr-2 mt-1">✔</span>
+                                <div><strong class="font-semibold">Hazte socio/a:</strong> Realiza un aporte voluntario y periódico.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-colibri-green mr-2 mt-1">✔</span>
+                                <div><strong class="font-semibold">Sé voluntario/a:</strong> Dona tu tiempo y talento.</div>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-colibri mt-auto w-full bg-colibri-green text-white hover:bg-colibri-red py-3 rounded-full font-bold text-lg">
+                            Participá ahora
+                        </a>
+                    </div>
+
+                    <!-- Columna 3: Apoya Ferias -->
+                    <div class="p-6 rounded-xl bg-colibri-bg shadow-xl flex flex-col items-center text-center">
+                        <span class="text-6xl mb-4">🛍️</span>
+                        <h3 class="text-2xl font-bold text-colibri-red mb-3">Apoya nuestras Ferias</h3>
+                        <p class="text-gray-700 mb-4">Participa en nuestras ventas solidarias de flores, juegos de mesa, empanadas y más. ¡Un apoyo con sabor local!</p>
+                        <a href="#noticias" class="btn-colibri mt-auto w-full bg-colibri-red text-white hover:bg-colibri-green py-2 rounded-full font-semibold">
+                            Ver Próximos Eventos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Donaciones (Doná) -->
+        <section id="donaciones" class="py-16 bg-colibri-soft-yellow">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-5xl font-extrabold text-colibri-red mb-6">
+                    Tu Corazón Hace la Diferencia 💛
+                </h2>
+                <p class="text-xl text-gray-600 mb-10">
+                    “Cada donación ayuda a sostener programas de inclusión, educación y acompañamiento para las personas con trisomía 21.”
+                </p>
+
+                <!-- Opciones de Donación -->
+                <div class="bg-white p-8 rounded-2xl shadow-2xl border-4 border-colibri-green">
+                    <h3 class="text-3xl font-bold text-colibri-green mb-6">Elige tu Forma de Donar</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-b pb-4">
+                            <p class="font-semibold text-lg text-gray-800">Transferencia Bancaria (CBU)</p>
+                            <p class="text-sm text-gray-500">[Datos Bancarios de Asociación Colibrí aquí]</p>
+                        </div>
+                        <div class="border-b pb-4">
+                            <p class="font-semibold text-lg text-gray-800">Donación con Código QR</p>
+                            <img src="https://placehold.co/150x150/EFECF0/D42921?text=QR" alt="Código QR para Donaciones" class="mx-auto my-3 rounded-lg border-2 border-colibri-red">
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg text-gray-800">Plataformas de Pago Online</p>
+                            <a href="#" class="btn-colibri mt-3 inline-block bg-colibri-red text-white hover:bg-colibri-green px-6 py-3 rounded-full font-bold">
+                                Enlace a Plataforma de Pago
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="mt-8 text-sm text-gray-500">
+                        ¡Gracias por tu generosidad!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Noticias y Eventos -->
+        <section id="noticias" class="py-16 bg-colibri-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-colibri-red text-center mb-12 border-b-2 border-colibri-green inline-block pb-1">
+                    Noticias y Eventos
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Evento 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                        <img src="https://placehold.co/600x350/D42921/FFFFFF?text=Taller+Familiar" alt="Taller Familiar" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <p class="text-sm text-colibri-green font-semibold mb-2">15 MARZO 2025 | TALLER</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Taller de Habilidades Sociales para Jóvenes</h3>
+                            <p class="text-gray-600 line-clamp-3">Un espacio lúdico y formativo para promover la interacción y el desarrollo personal. ¡Inscripciones abiertas!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Evento 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                        <img src="https://placehold.co/600x350/85C224/FFFFFF?text=Feria+Solidaria" alt="Feria Solidaria" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <p class="text-sm text-colibri-red font-semibold mb-2">05 ABRIL 2025 | FERIA</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Gran Venta Solidaria de Empanadas</h3>
+                            <p class="text-gray-600 line-clamp-3">Apoya nuestros programas disfrutando de las mejores empanadas salteñas. ¡Te esperamos en nuestra sede!</p>
+                        </div>
+                    </div>
+
+                    <!-- Noticia 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                        <img src="https://placehold.co/600x350/EFECF0/D42921?text=Capacitacion+Inclusiva" alt="Capacitación Inclusiva" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <p class="text-sm text-colibri-green font-semibold mb-2">20 MAYO 2025 | NOTICIA</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Colibrí Participa en Jornadas de Empleo con Apoyo</h3>
+                            <p class="text-gray-600 line-clamp-3">Nuestros expertos compartieron avances y metodologías en el encuentro anual de inclusión laboral.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#" class="btn-colibri inline-flex items-center bg-colibri-green text-white hover:bg-colibri-red px-6 py-3 rounded-full font-bold text-lg">
+                        Ver todas las noticias
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contacto -->
+        <section id="contacto" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-colibri-green text-center mb-4">
+                    Construyamos juntos una sociedad inclusiva para todos y todas.
+                </h2>
+                <p class="text-center text-2xl font-bold text-colibri-red mb-12">¡Te necesitamos!</p>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    
+                    <!-- Datos de Contacto y Redes -->
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <span class="text-3xl text-colibri-red mr-4">📍</span>
+                            <div>
+                                <h3 class="font-semibold text-xl">Nuestra Dirección</h3>
+                                <p class="text-gray-600">Las Heras 1696, Salta, CP 4400, Argentina</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-3xl text-colibri-red mr-4">📞</span>
+                            <div>
+                                <h3 class="font-semibold text-xl">Teléfonos</h3>
+                                <p class="text-gray-600">+54 387 5891184 / +54 387 4061906</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <span class="text-3xl text-colibri-red mr-4">✉️</span>
+                            <div>
+                                <h3 class="font-semibold text-xl">Correo Electrónico</h3>
+                                <p class="text-gray-600">colibrisalta95@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Redes Sociales -->
+                        <div class="pt-6">
+                            <h3 class="font-semibold text-xl mb-4 text-colibri-green">Síguenos en Redes</h3>
+                            <div class="flex space-x-4">
+                                <!-- Instagram -->
+                                <a href="#" target="_blank" aria-label="Instagram de Colibrí" class="text-white bg-colibri-red p-3 rounded-full transition duration-300 hover:scale-110 hover:bg-colibri-green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                </a>
+                                <!-- Facebook -->
+                                <a href="#" target="_blank" aria-label="Facebook de Colibrí" class="text-white bg-colibri-red p-3 rounded-full transition duration-300 hover:scale-110 hover:bg-colibri-green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa de Ubicación (Placeholder) -->
+                    <div class="bg-colibri-bg p-4 rounded-xl shadow-xl">
+                        <h3 class="font-semibold text-xl mb-2">Mapa de Ubicación</h3>
+                        <div class="aspect-video bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">
+                            [Placeholder de Mapa de Salta]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <a href="#inicio" class="text-2xl font-bold text-colibri-green">Colibrí</a>
+            </div>
+            
+            <nav class="flex justify-center space-x-6 text-sm mb-4">
+                <a href="#inicio" class="hover:text-colibri-red transition">Inicio</a>
+                <a href="#quienes-somos" class="hover:text-colibri-red transition">Quiénes Somos</a>
+                <a href="#programas" class="hover:text-colibri-red transition">Programas</a>
+                <a href="#colaborar" class="hover:text-colibri-red transition">Colaborar</a>
+                <a href="#contacto" class="hover:text-colibri-red transition">Contacto</a>
+            </nav>
+            
+            <p class="text-sm text-gray-400">
+                ONG inclusión educativa Salta | síndrome de Down Argentina | educación inclusiva
+            </p>
+            
+            <p class="mt-4 text-sm text-gray-500">
+                © Asociación Colibrí 2025 – Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
